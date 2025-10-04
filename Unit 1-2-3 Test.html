@@ -1,0 +1,756 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprehensive Immunology &amp; Microbiology Test</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a2e;
+    margin: 0; padding: 0;
+  }
+  h1, h2 {
+    text-align: center;
+    margin: 1rem 0;
+    color: #16213e;
+  }
+  .container {
+    max-width: 900px;
+    background: #fffdfaee;
+    margin: 20px auto 40px;
+    padding: 25px 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  form {
+    margin-top: 20px;
+  }
+  .question {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .question:last-child {
+    border-bottom: none;
+  }
+  label {
+    cursor: pointer;
+    display: block;
+    margin: 6px 0;
+  }
+  input[type="text"] {
+    width: 98%;
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+  .match-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+  .match-table th, .match-table td {
+    border: 1px solid #1a1a2e;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  .match-table th {
+    background-color: #16213e;
+    color: white;
+  }
+  .match-table td {
+    background-color: #e3f2fd;
+  }
+  .btn-submit {
+    background-color: #16213e;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 35px;
+    transition: background-color 0.3s ease;
+  }
+  .btn-submit:hover {
+    background-color: #0f1b33;
+  }
+  #result {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    font-weight: 700;
+    color: #16213e;
+  }
+  #submitName {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+  }
+  #timer {
+    text-align: right;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #16213e;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #16213eaa;
+    margin-top: 45px;
+    padding-bottom: 25px;
+  }
+</style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+<div class="container">
+  <h1>Comprehensive Immunology &amp; Microbiology Test</h1>
+  <p><strong>Instructions:</strong> Complete all 100 questions in 20 minutes. Your final score and status will be shown after submission.<br>
+  Score &lt;60 = FAIL, ≥60 = PASS, &gt;80 = VERY GOOD, &gt;90 = EXCELLENT.</p>
+  <div id="timer">Time left: <span id="time">20:00</span></div>
+
+  <form id="testForm" autocomplete="off" spellcheck="false">
+
+<!-- MCQs 1-80 -->
+<script>
+const mcqs = [
+  // Unit 1 (Microbiology) - 1 to 30 (selected for MCQs)
+  {
+    q: "1. What is a microorganism?",
+    options: ["A visible organism", "A living organism too small to be seen with naked eye", "A non-living particle", "A plant"],
+    answer: "B"
+  },
+  {
+    q: "2. Microbiology is the study of:",
+    options: ["Plants", "Animals", "Microorganisms", "Minerals"],
+    answer: "C"
+  },
+  {
+    q: "3. Microorganisms can be:",
+    options: ["Only unicellular", "Only multicellular", "Both unicellular and multicellular", "Neither"],
+    answer: "C"
+  },
+  {
+    q: "4. Which of the following is NOT a type of microorganism?",
+    options: ["Bacteria", "Viruses", "Fungi", "Mammals"],
+    answer: "D"
+  },
+  {
+    q: "5. Bacteriology is the study of:",
+    options: ["Viruses", "Bacteria", "Fungi", "Protozoa"],
+    answer: "B"
+  },
+  {
+    q: "6. A single bacterial cell divides into two daughter cells by:",
+    options: ["Mitosis", "Meiosis", "Binary fission", "Budding"],
+    answer: "C"
+  },
+  {
+    q: "7. Which shape corresponds to rod-shaped bacteria?",
+    options: ["Cocci", "Bacilli", "Spirilla", "Vibrio"],
+    answer: "B"
+  },
+  {
+    q: "8. Spherical shaped bacteria are called:",
+    options: ["Bacilli", "Spirilla", "Cocci", "Vibrios"],
+    answer: "C"
+  },
+  {
+    q: "9. Curved shaped bacteria are called:",
+    options: ["Bacilli", "Cocci", "Spirilla", "Rods"],
+    answer: "C"
+  },
+  {
+    q: "10. Anaerobic bacteria:",
+    options: ["Require oxygen for respiration", "Do not require oxygen for respiration", "Cannot survive without oxygen", "Only live in air"],
+    answer: "B"
+  },
+  // Skipping some intermediate for brevity, picking diverse questions from Unit 1 up to 30 MCQs
+  {
+    q: "11. Gram staining differentiates bacteria based on:",
+    options: ["Shape", "Size", "Cell wall chemical and physical properties", "Motility"],
+    answer: "C"
+  },
+  {
+    q: "12. Gram-positive bacteria stain:",
+    options: ["Red/pink", "Purple", "Blue", "Yellow"],
+    answer: "B"
+  },
+  {
+    q: "13. Gram-negative bacteria stain:",
+    options: ["Purple", "Blue", "Pink/red", "Green"],
+    answer: "C"
+  },
+  {
+    q: "14. A characteristic of Gram-positive bacteria is:",
+    options: ["Thin peptidoglycan layer", "Thick peptidoglycan layer", "Outer membrane presence", "Presence of endotoxin (LPS)"],
+    answer: "B"
+  },
+  {
+    q: "15. Which bacteria have an outer membrane containing lipopolysaccharides?",
+    options: ["Gram-positive", "Gram-negative", "Both", "Neither"],
+    answer: "B"
+  },
+  {
+    q: "16. Endotoxin is found in:",
+    options: ["Gram-positive bacteria only", "Gram-negative bacteria only", "All bacteria", "Viruses"],
+    answer: "B"
+  },
+  {
+    q: "17. Endotoxins are part of:",
+    options: ["Peptidoglycan", "Lipopolysaccharide (LPS)", "Ribosomes", "Capsule"],
+    answer: "B"
+  },
+  {
+    q: "18. When Gram-negative bacteria die, they release:",
+    options: ["Exotoxins", "Endotoxins", "Antibiotics", "Spores"],
+    answer: "B"
+  },
+  {
+    q: "19. Which of the following is NOT a symptom caused by endotoxin?",
+    options: ["Fever", "Hypotension", "Septic shock", "Allergy"],
+    answer: "D"
+  },
+  {
+    q: "20. Escherichia coli is an example of:",
+    options: ["Gram-positive bacteria", "Gram-negative bacteria", "Virus", "Fungi"],
+    answer: "B"
+  },
+  {
+    q: "21. Salmonella causes:",
+    options: ["Pneumonia", "Food poisoning and typhoid fever", "Tuberculosis", "Ulcers"],
+    answer: "B"
+  },
+  {
+    q: "22. Yersinia pestis causes:",
+    options: ["Plague", "Cholera", "Tuberculosis", "Influenza"],
+    answer: "A"
+  },
+  {
+    q: "23. Which bacterial structure is responsible for motility?",
+    options: ["Pili", "Capsule", "Flagella", "Ribosome"],
+    answer: "C"
+  },
+  {
+    q: "24. What helps bacteria attach to host surfaces?",
+    options: ["Flagella", "Pili", "Capsule", "Cell wall"],
+    answer: "B"
+  },
+  {
+    q: "25. Bacterial DNA is:",
+    options: ["Linear chromosomes only", "Circular plasmids only", "Both circular plasmids and chromosomal DNA", "Not present"],
+    answer: "C"
+  },
+  {
+    q: "26. Bacterial cells lack:",
+    options: ["Ribosomes", "Cell membrane", "Membrane-bound organelles", "DNA"],
+    answer: "C"
+  },
+  {
+    q: "27. Commensal bacteria:",
+    options: ["Cause disease", "Are harmful", "Help digestion and immune system", "Are viruses"],
+    answer: "C"
+  },
+  {
+    q: "28. Which bacteria cause urinary tract infections?",
+    options: ["Streptococcus pneumoniae", "Escherichia coli", "Salmonella", "Mycobacterium tuberculosis"],
+    answer: "B"
+  },
+  {
+    q: "29. Which of the following is NOT a pathogenicity factor of bacteria?",
+    options: ["Adhesins", "Ribosomes", "Aggressins", "Invasins"],
+    answer: "B"
+  },
+  {
+    q: "30. Viruses contain:",
+    options: ["Both DNA and RNA", "Only DNA or RNA (not both)", "Only proteins", "Only lipids"],
+    answer: "B"
+  },
+
+  // Unit 2 (Chain of Infection) - 31 to 55 (selected MCQs for total 80 MCQs)
+  {
+    q: "31. What is an infectious agent that causes disease called?",
+    options: ["Antibody", "Pathogen", "Vaccine", "Reservoir"],
+    answer: "B"
+  },
+  {
+    q: "32. Which of the following is a pathogen?",
+    options: ["Soil", "Influenza virus", "Water", "Handkerchief"],
+    answer: "B"
+  },
+  {
+    q: "33. The habitat where an infectious agent normally lives and multiplies is called:",
+    options: ["Carrier", "Reservoir", "Vector", "Portal of exit"],
+    answer: "B"
+  },
+  {
+    q: "34. Which of the following is NOT considered a reservoir?",
+    options: ["Humans", "Animals", "Environment", "Antibiotics"],
+    answer: "D"
+  },
+  {
+    q: "35. The reservoir of Clostridium botulinum is:",
+    options: ["Water", "Soil", "Humans", "Animals"],
+    answer: "B"
+  },
+  {
+    q: "36. Diseases transmitted directly from person to person without intermediaries are examples of transmission from:",
+    options: ["Animal reservoirs", "Human reservoirs", "Environmental reservoirs", "Vector-borne transmission"],
+    answer: "B"
+  },
+  {
+    q: "37. A person who carries a pathogen but shows no symptoms is called:",
+    options: ["Symptomatic carrier", "Asymptomatic carrier", "Immune host", "Passive host"],
+    answer: "B"
+  },
+  {
+    q: "38. The term for diseases transmitted from vertebrate animals to humans is:",
+    options: ["Nosocomial infections", "Zoonoses", "Endemic diseases", "Vector-borne diseases"],
+    answer: "B"
+  },
+  {
+    q: "39. The portal of exit for influenza virus is typically the:",
+    options: ["Skin", "Respiratory tract", "Urine", "Blood"],
+    answer: "B"
+  },
+  {
+    q: "40. Which of the following is a direct mode of transmission?",
+    options: ["Airborne", "Droplet spread", "Vector-borne", "Vehicle-borne"],
+    answer: "B"
+  },
+  {
+    q: "41. Droplet nuclei are usually:",
+    options: ["Larger than 10 microns", "Smaller than 5 microns", "Only found in water", "Not airborne"],
+    answer: "B"
+  },
+  {
+    q: "42. The main way to prevent transmission at the portal of exit includes:",
+    options: ["Immunization", "Hand washing", "Medical asepsis", "Isolation of susceptible hosts"],
+    answer: "C"
+  },
+  {
+    q: "43. The fecal-oral route involves the portal of exit and entry through:",
+    options: ["Respiratory tract and skin", "Mouth and feces", "Blood and urine", "Skin and mucous membranes"],
+    answer: "B"
+  },
+  {
+    q: "44. Which of the following is NOT a mode of indirect transmission?",
+    options: ["Airborne", "Vehicle-borne", "Direct contact", "Vector-borne"],
+    answer: "C"
+  },
+  {
+    q: "45. Which is NOT an example of a vector?",
+    options: ["Mosquito", "Flea", "Tick", "Handkerchief"],
+    answer: "D"
+  },
+  {
+    q: "46. The disease eradicated by targeting humans as the only reservoir is:",
+    options: ["Influenza", "Smallpox", "Rabies", "Tuberculosis"],
+    answer: "B"
+  },
+  {
+    q: "47. Hookworm is transmitted primarily by:",
+    options: ["Airborne transmission", "Direct contact with contaminated soil", "Vector-borne transmission", "Droplet spread"],
+    answer: "B"
+  },
+  {
+    q: "48. Chronic carriers:",
+    options: ["Always show symptoms", "Harbors pathogens for months or years", "Cannot transmit disease", "Are immune hosts"],
+    answer: "B"
+  },
+  {
+    q: "49. The best method to prevent vector-borne transmission is:",
+    options: ["Hand washing", "Insect control", "Isolation", "Medical asepsis"],
+    answer: "B"
+  },
+  {
+    q: "50. The portal of entry must provide access to:",
+    options: ["Blood only", "Tissues where the pathogen multiplies or toxin acts", "Only mucous membranes", "The environment"],
+    answer: "B"
+  },
+  {
+    q: "51. Human immunodeficiency virus (HIV) typically enters the body through:",
+    options: ["Respiratory tract", "Blood and mucous membranes", "Skin intact", "Urine"],
+    answer: "B"
+  },
+  {
+    q: "52. Which of the following is NOT part of the chain of infection?",
+    options: ["Infectious agent", "Reservoir", "Immune system", "Susceptible host"],
+    answer: "C"
+  },
+  {
+    q: "53. A fomite is:",
+    options: ["An inanimate object that can carry pathogens", "A type of vector", "A human reservoir", "A type of bacteria"],
+    answer: "A"
+  },
+  {
+    q: "54. Which of the following diseases is transmitted by fleas?",
+    options: ["Malaria", "Plague", "Tuberculosis", "Influenza"],
+    answer: "B"
+  },
+  {
+    q: "55. Which pathogen typically exits the host through urine?",
+    options: ["Influenza virus", "Schistosomes", "Cholera vibrios", "Sarcoptes scabiei"],
+    answer: "B"
+  },
+
+  // Unit 3 (Innate and Acquired Immunity) - 56 to 80 (to complete 80 MCQs)
+  {
+    q: "56. What is the primary function of immunity?",
+    options: ["To promote growth", "To resist or eliminate harmful foreign materials and abnormal cells", "To increase body temperature", "To digest food"],
+    answer: "B"
+  },
+  {
+    q: "57. Innate immunity is:",
+    options: ["Developed after vaccination", "Present naturally without prior sensitization", "Specific to one pathogen", "Delayed response"],
+    answer: "B"
+  },
+  {
+    q: "58. Acquired immunity is characterized by:",
+    options: ["Immediate response", "Lack of memory", "Specificity and immunological memory", "Non-specific defense"],
+    answer: "C"
+  },
+  {
+    q: "59. Which system is a functional system, not an organ system?",
+    options: ["Nervous system", "Immune system", "Circulatory system", "Respiratory system"],
+    answer: "B"
+  },
+  {
+    q: "60. The first line of defense in immunity is:",
+    options: ["Adaptive immunity", "Innate immunity", "Humoral immunity", "Cell-mediated immunity"],
+    answer: "B"
+  },
+  {
+    q: "61. Innate immunity response time is approximately:",
+    options: ["Days", "Weeks", "0-4 hours", "1 month"],
+    answer: "C"
+  },
+  {
+    q: "62. Innate immunity is generally:",
+    options: ["Specific", "Non-specific", "Adaptive", "Slow"],
+    answer: "B"
+  },
+  {
+    q: "63. Which of the following is NOT a characteristic of innate immunity?",
+    options: ["Immediate response", "Memory formation", "Present at birth", "Non-specific"],
+    answer: "B"
+  },
+  {
+    q: "64. Physical barriers of innate immunity include:",
+    options: ["Skin and mucous membranes", "Antibodies", "T cells", "Memory cells"],
+    answer: "A"
+  },
+  {
+    q: "65. Which mechanical barrier helps trap pathogens in the respiratory tract?",
+    options: ["Hair", "Cilia", "Sweat glands", "Saliva"],
+    answer: "B"
+  },
+  {
+    q: "66. Chemical barriers in innate immunity include:",
+    options: ["Enzymes and acid", "Blood cells", "T cells", "B cells"],
+    answer: "A"
+  },
+  {
+    q: "67. Which fluid helps wash away pathogens from urinary organs?",
+    options: ["Tears", "Sweat", "Urine", "Blood"],
+    answer: "C"
+  },
+  {
+    q: "68. Normal flora competes with pathogens by:",
+    options: ["Producing antibodies", "Consuming nutrients and space", "Killing host cells", "Producing toxins"],
+    answer: "B"
+  },
+  {
+    q: "69. The skin acts as a:",
+    options: ["Chemical barrier only", "Mechanical barrier only", "Both mechanical and chemical barrier", "No barrier"],
+    answer: "C"
+  },
+  {
+    q: "70. Which of the following is part of the normal flora?",
+    options: ["Pathogenic bacteria", "Commensal bacteria", "Viruses", "Parasites"],
+    answer: "B"
+  },
+  {
+    q: "71. Neutrophils are:",
+    options: ["Red blood cells", "Most abundant white blood cells and phagocytes", "Antibody producers", "Memory cells"],
+    answer: "B"
+  },
+  {
+    q: "72. Macrophages primarily:",
+    options: ["Attack pathogens in blood", "Phagocytize microbes in tissues", "Produce antibodies", "Activate B cells"],
+    answer: "B"
+  },
+  {
+    q: "73. Cytokines are:",
+    options: ["Large molecules that digest bacteria", "Small proteins secreted by immune cells that regulate immune responses", "Immune cells", "Bacterial toxins"],
+    answer: "B"
+  },
+  {
+    q: "74. Which response is the first reaction to infection or injury?",
+    options: ["Antibody production", "Inflammatory response", "Memory cell activation", "Complement activation"],
+    answer: "B"
+  },
+  {
+    q: "75. Natural killer (NK) cells:",
+    options: ["Produce antibodies", "Kill virus-infected and cancer cells", "Activates B cells", "Digest food"],
+    answer: "B"
+  },
+  {
+    q: "76. The complement system is:",
+    options: ["A group of plasma proteins that enhance phagocytosis and lyse pathogens", "Antibody molecules", "Phagocytic cells", "T cells"],
+    answer: "A"
+  },
+  {
+    q: "77. Complement proteins are numbered from:",
+    options: ["C1 to C5", "C1 to C9", "C10 to C20", "C100 to C200"],
+    answer: "B"
+  },
+  {
+    q: "78. Complement system functions include:",
+    options: ["Direct killing of pathogens", "Coating pathogens to enhance phagocytosis", "Activating inflammatory cells", "All of the above"],
+    answer: "D"
+  },
+  {
+    q: "79. Acquired immunity develops:",
+    options: ["At birth", "After exposure to specific pathogens", "Without antigen exposure", "Only in the elderly"],
+    answer: "B"
+  },
+  {
+    q: "80. Acquired immunity is known for:",
+    options: ["Non-specific response", "Immunological memory", "Immediate response", "No memory"],
+    answer: "B"
+  }
+];
+
+// Fill in the blanks 81-85 (from mixed units)
+const fillBlanks = [
+  {q: "81. Immunity is the body’s ability to resist or eliminate __________ foreign materials or abnormal cells.", answer: "potentially harmful"},
+  {q: "82. An infectious agent that causes disease is called a __________.", answer: "pathogen"},
+  {q: "83. The place where an infectious agent normally lives and multiplies is called the __________.", answer: "reservoir"},
+  {q: "84. Innate immunity responds __________ within 0-4 hours of exposure to a pathogen.", answer: "immediately"},
+  {q: "85. Antibodies are proteins also known as __________.", answer: "immunoglobulins"}
+];
+
+// True or False 86-90 (from mixed units)
+const trueFalse = [
+  {q:"86. Innate immunity is the body's first line of defense and is present in all individuals at all times.", answer:"true"},
+  {q:"87. Airborne transmission involves large droplets that fall quickly to the ground.", answer:"false"},
+  {q:"88. The complement system consists of proteins that enhance phagocytosis and can directly lyse pathogens.", answer:"true"},
+  {q:"89. Vaccination works based on the principle of acquired immunity and immunological memory.", answer:"true"},
+  {q:"90. Adaptive immunity response is immediate, like innate immunity.", answer:"false"}
+];
+
+// Identify Items 91-95 (mixed units)
+const identifyItems = [
+  {q:"91. Identify the immune cells responsible for producing antibodies.", answer:"B lymphocytes"},
+  {q:"92. Name the reservoir for brucellosis.", answer:"Cows and pigs"},
+  {q:"93. Identify the portal of exit for influenza virus.", answer:"Respiratory tract"},
+  {q:"94. Identify the term for white blood cells that 'eat' pathogens.", answer:"Phagocytes"},
+  {q:"95. Identify the type of immunity that adapts and creates immunological memory.", answer:"Acquired immunity"}
+];
+
+// Match-Type 96-100 (one full match question)
+const matchPairs = [
+  {q:"96. Match the following:", pairs: [
+    {a:"1. Innate immunity", b:"A. Immediate, nonspecific defense"},
+    {a:"2. Acquired immunity", b:"B. Produces immunological memory"},
+    {a:"3. Neutrophils", b:"C. Most abundant phagocytic white cells"},
+    {a:"4. Natural killer cells", b:"D. Kill virus-infected or cancer cells"},
+    {a:"5. Complement", b:"E. Plasma proteins aiding pathogen destruction"}
+  ]}
+];
+</script>
+
+<div id="mcq-container"></div>
+
+<h2>Fill in the Blanks (81-85)</h2>
+<div id="fill-container"></div>
+
+<h2>True or False (86-90)</h2>
+<div id="tf-container"></div>
+
+<h2>Identify Items (91-95)</h2>
+<div id="id-container"></div>
+
+<h2>Match the Columns (96-100)</h2>
+<div id="match-container"></div>
+
+<label for="submitName">Enter your full name:</label>
+<input type="text" id="submitName" name="submitName" placeholder="Your full name" required="">
+
+<button type="submit" class="btn-submit">Submit Test</button>
+</form>
+
+<div id="result"></div>
+</div>
+
+<footer>
+  © 2025 Prepared by Dr. Tamer A. Addissouky, PhD, MLS ASCP
+</footer>
+
+<script>
+const mcqContainer = document.getElementById("mcq-container");
+function createMCQ(qObj, idx) {
+  const qNum = idx + 1;
+  let html = `<div class="question"><p><b>${qObj.q}</b></p>`;
+  const opts = ['A','B','C','D'];
+  for(let i=0; i<qObj.options.length; i++) {
+    html += `<label><input type="radio" name="q${qNum}" value="${opts[i]}" required> ${opts[i]}) ${qObj.options[i]}</label>`;
+  }
+  html += `</div>`;
+  return html;
+}
+mcqs.forEach((q,i) => {
+  mcqContainer.innerHTML += createMCQ(q, i);
+});
+
+const fillContainer = document.getElementById("fill-container");
+fillBlanks.forEach((fb, i) => {
+  fillContainer.innerHTML += `<div class="question"><p><b>${fb.q}</b></p><input type="text" id="fb${81+i}" name="fb${81+i}" required></div>`;
+});
+
+const tfContainer = document.getElementById("tf-container");
+trueFalse.forEach((tf,i) => {
+  const qNum = 86 + i;
+  tfContainer.innerHTML += `<div class="question"><p><b>${tf.q}</b></p>
+    <label><input type="radio" name="tf${qNum}" value="true" required> True</label>
+    <label><input type="radio" name="tf${qNum}" value="false" required> False</label>
+  </div>`;
+});
+
+const idContainer = document.getElementById("id-container");
+identifyItems.forEach((id,i) => {
+  const qNum = 91 + i;
+  idContainer.innerHTML += `<div class="question"><p><b>${id.q}</b></p><input type="text" id="id${qNum}" name="id${qNum}" required></div>`;
+});
+
+const matchContainer = document.getElementById("match-container");
+const mp = matchPairs[0];
+let matchHTML = `<p><b>${mp.q}</b></p><table class="match-table"><thead><tr><th>Column A</th><th>Match Column B</th></tr></thead><tbody>`;
+mp.pairs.forEach((pair, idx) => {
+  const options = mp.pairs.map(p => p.b);
+  let optionsHTML = `<select name="match${96 + idx}" required><option value="">Select</option>`;
+  options.forEach(opt => {
+    optionsHTML += `<option value="${opt}">${opt}</option>`;
+  });
+  optionsHTML += `</select>`;
+  matchHTML += `<tr><td>${pair.a}</td><td>${optionsHTML}</td></tr>`;
+});
+matchHTML += `</tbody></table>`;
+matchContainer.innerHTML = matchHTML;
+
+const form = document.getElementById("testForm");
+const resultDiv = document.getElementById("result");
+const submitNameInput = document.getElementById("submitName");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  let score = 0;
+  let total = 100;
+
+  // Score MCQs 1-80
+  for(let i=0; i<mcqs.length; i++) {
+    let qNum = i+1;
+    let radios = form.elements["q"+qNum];
+    let val = null;
+    if(radios) {
+      for(let r of radios) {
+        if(r.checked) val = r.value;
+      }
+      if(val === mcqs[i].answer) score++;
+    }
+  }
+
+  // Score Fill in blanks 81-85 (case insensitive trim)
+  fillBlanks.forEach((fb,i) => {
+    let input = form.elements["fb"+(81+i)];
+    if(input) {
+      let val = input.value.trim().toLowerCase();
+      if(val === fb.answer.toLowerCase()) score++;
+    }
+  });
+
+  // Score True/False 86-90
+  trueFalse.forEach((tf,i) => {
+    const qNum = 86 + i;
+    let radios = form.elements["tf"+qNum];
+    let val = null;
+    if(radios) {
+      for(let r of radios) {
+        if(r.checked) val = r.value.toLowerCase();
+      }
+      if(val === tf.answer.toLowerCase()) score++;
+    }
+  });
+
+  // Score Identify Items 91-95 (allow case insensitive, ignore trailing spaces)
+  identifyItems.forEach((id,i) => {
+    let input = form.elements["id"+(91+i)];
+    if(input) {
+      let val = input.value.trim().toLowerCase();
+      let ans = id.answer.toLowerCase();
+      if(val === ans) score++;
+    }
+  });
+
+  // Score Match Type 96-100
+  let correctMatches = {
+    "1. Innate immunity": "A. Immediate, nonspecific defense",
+    "2. Acquired immunity": "B. Produces immunological memory",
+    "3. Neutrophils": "C. Most abundant phagocytic white cells",
+    "4. Natural killer cells": "D. Kill virus-infected or cancer cells",
+    "5. Complement": "E. Plasma proteins aiding pathogen destruction"
+  };
+  for(let i=0; i<5; i++) {
+    let sel = form.elements["match"+(96+i)];
+    let questionText = mp.pairs[i].a;
+    if(sel && sel.value === correctMatches[questionText]) {
+      score++;
+    }
+  }
+
+  let nameVal = submitNameInput.value.trim();
+  if(!nameVal) {
+    alert("Please enter your full name before submitting.");
+    return;
+  }
+  let status = "";
+  if(score < 60) status = "FAIL";
+  else if(score >= 60 && score <= 80) status = "PASS";
+  else if(score >80 && score <=90) status = "VERY GOOD";
+  else status = "EXCELLENT";
+
+  resultDiv.innerHTML = `<p>Thank you, <b>${nameVal}</b>! Your score is <b>${score} / ${total}</b>.<br>Status: <span style="color:#16213e;">${status}</span></p>`;
+
+  // Disable form after submit
+  form.querySelectorAll('input, select, button').forEach(elem => elem.disabled = true);
+  clearInterval(timerInterval);
+});
+
+// Timer 20 minutes countdown
+let totalSeconds = 20 * 60;
+const timeDisplay = document.getElementById("time");
+const timerInterval = setInterval(() => {
+  if(totalSeconds <= 0) {
+    clearInterval(timerInterval);
+    alert("Time is up! The test will be submitted automatically.");
+    form.requestSubmit();
+    return;
+  }
+  totalSeconds--;
+  let mins = Math.floor(totalSeconds / 60);
+  let secs = totalSeconds % 60;
+  timeDisplay.textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+}, 1000);
+</script>
+
+
+
+</body></html>
