@@ -1,0 +1,1021 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microbiology &amp; Immunity Test</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #8fd3f4, #84fab0);
+    margin: 0; padding: 0;
+    color: #222;
+  }
+  header {
+    background-color: #2d6a4f;
+    color: #eef6f9;
+    padding: 1em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8em;
+    letter-spacing: 1.2px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  main {
+    max-width: 900px;
+    margin: 1.5em auto 3em;
+    background: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    padding: 2em 3em;
+  }
+  h2 {
+    color: #1b4332;
+    margin-bottom: 0.5em;
+  }
+  form > div.question {
+    margin-bottom: 1.25em;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.3em;
+    cursor: pointer;
+  }
+  input[type="text"] {
+    padding: 0.4em;
+    width: 50%;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1.8px solid #2d6a4f;
+  }
+  input[type="radio"], input[type="checkbox"] {
+    margin-right: 0.6em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    display: block;
+    margin: 1.5em auto 0;
+    background-color: #2d6a4f;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75em 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-submit:hover {
+    background-color: #1b4332;
+  }
+  .score {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 1em;
+    text-align: center;
+    color: #1b4332;
+  }
+  .correction {
+    margin-top: 0.25em;
+    font-size: 0.9em;
+    color: #b00020;
+  }
+  .correct {
+    color: #2d6a4f;
+    font-weight: 700;
+  }
+  .timer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #1b4332;
+    color: #eef6f9;
+    padding: 0.5em 1em;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-bottom-left-radius: 8px;
+    z-index: 9999;
+    user-select: none;
+  }
+  /* Match type table */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0.5em;
+  }
+  th, td {
+    border: 1.5px solid #2d6a4f;
+    padding: 0.5em 1em;
+    text-align: left;
+    vertical-align: middle;
+  }
+  th {
+    background-color: #40916c;
+    color: #eef6f9;
+  }
+  .match-pair {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+  select {
+    padding: 0.3em 0.5em;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1.5px solid #2d6a4f;
+    min-width: 100px;
+    cursor: pointer;
+  }
+  @media (max-width: 600px) {
+    main {
+      padding: 1em 1.25em;
+    }
+    input[type="text"] {
+      width: 100%;
+    }
+  }
+</style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+<div class="timer" id="timer">Time left: 20:00</div>
+<header>
+  Microbiology &amp; Immunity Test - 100 Questions
+</header>
+<main>
+<form id="testForm" autocomplete="off">
+  <h2>Multiple Choice Questions (1-80)</h2>
+
+  <!-- 1 to 80 MCQs (80 questions) -->
+  <!-- We'll include 80 MCQs from units 1, 2, 3 exactly as asked -->
+  <!-- Each question has 4 options (A-D) with radio buttons, name=Q#, value=A-D -->
+
+  <!-- Questions 1 to 20 from unit 1 MCQs -->
+  <div class="question" data-qnum="1">
+    <strong>1.</strong> What is a microorganism?
+    <label><input type="radio" name="Q1" value="A" required="">A) A visible organism</label>
+    <label><input type="radio" name="Q1" value="B">B) A living organism too small to be seen with naked eye</label>
+    <label><input type="radio" name="Q1" value="C">C) A non-living particle</label>
+    <label><input type="radio" name="Q1" value="D">D) A plant</label>
+  </div>
+  <div class="question" data-qnum="2">
+    <strong>2.</strong> Microbiology is the study of:
+    <label><input type="radio" name="Q2" value="A" required="">A) Plants</label>
+    <label><input type="radio" name="Q2" value="B">B) Animals</label>
+    <label><input type="radio" name="Q2" value="C">C) Microorganisms</label>
+    <label><input type="radio" name="Q2" value="D">D) Minerals</label>
+  </div>
+  <div class="question" data-qnum="3">
+    <strong>3.</strong> Microorganisms can be:
+    <label><input type="radio" name="Q3" value="A" required="">A) Only unicellular</label>
+    <label><input type="radio" name="Q3" value="B">B) Only multicellular</label>
+    <label><input type="radio" name="Q3" value="C">C) Both unicellular and multicellular</label>
+    <label><input type="radio" name="Q3" value="D">D) Neither</label>
+  </div>
+  <div class="question" data-qnum="4">
+    <strong>4.</strong> Which of the following is NOT a type of microorganism?
+    <label><input type="radio" name="Q4" value="A" required="">A) Bacteria</label>
+    <label><input type="radio" name="Q4" value="B">B) Viruses</label>
+    <label><input type="radio" name="Q4" value="C">C) Fungi</label>
+    <label><input type="radio" name="Q4" value="D">D) Mammals</label>
+  </div>
+  <div class="question" data-qnum="5">
+    <strong>5.</strong> Bacteriology is the study of:
+    <label><input type="radio" name="Q5" value="A" required="">A) Viruses</label>
+    <label><input type="radio" name="Q5" value="B">B) Bacteria</label>
+    <label><input type="radio" name="Q5" value="C">C) Fungi</label>
+    <label><input type="radio" name="Q5" value="D">D) Protozoa</label>
+  </div>
+  <div class="question" data-qnum="6">
+    <strong>6.</strong> A single bacterial cell divides into two daughter cells by:
+    <label><input type="radio" name="Q6" value="A" required="">A) Mitosis</label>
+    <label><input type="radio" name="Q6" value="B">B) Meiosis</label>
+    <label><input type="radio" name="Q6" value="C">C) Binary fission</label>
+    <label><input type="radio" name="Q6" value="D">D) Budding</label>
+  </div>
+  <div class="question" data-qnum="7">
+    <strong>7.</strong> Which shape corresponds to rod-shaped bacteria?
+    <label><input type="radio" name="Q7" value="A" required="">A) Cocci</label>
+    <label><input type="radio" name="Q7" value="B">B) Bacilli</label>
+    <label><input type="radio" name="Q7" value="C">C) Spirilla</label>
+    <label><input type="radio" name="Q7" value="D">D) Vibrio</label>
+  </div>
+  <div class="question" data-qnum="8">
+    <strong>8.</strong> Spherical shaped bacteria are called:
+    <label><input type="radio" name="Q8" value="A" required="">A) Bacilli</label>
+    <label><input type="radio" name="Q8" value="B">B) Spirilla</label>
+    <label><input type="radio" name="Q8" value="C">C) Cocci</label>
+    <label><input type="radio" name="Q8" value="D">D) Vibrios</label>
+  </div>
+  <div class="question" data-qnum="9">
+    <strong>9.</strong> Curved shaped bacteria are called:
+    <label><input type="radio" name="Q9" value="A" required="">A) Bacilli</label>
+    <label><input type="radio" name="Q9" value="B">B) Cocci</label>
+    <label><input type="radio" name="Q9" value="C">C) Spirilla</label>
+    <label><input type="radio" name="Q9" value="D">D) Rods</label>
+  </div>
+  <div class="question" data-qnum="10">
+    <strong>10.</strong> Anaerobic bacteria:
+    <label><input type="radio" name="Q10" value="A" required="">A) Require oxygen for respiration</label>
+    <label><input type="radio" name="Q10" value="B">B) Do not require oxygen for respiration</label>
+    <label><input type="radio" name="Q10" value="C">C) Cannot survive without oxygen</label>
+    <label><input type="radio" name="Q10" value="D">D) Only live in air</label>
+  </div>
+  <div class="question" data-qnum="11">
+    <strong>11.</strong> Gram staining differentiates bacteria based on:
+    <label><input type="radio" name="Q11" value="A" required="">A) Shape</label>
+    <label><input type="radio" name="Q11" value="B">B) Size</label>
+    <label><input type="radio" name="Q11" value="C">C) Cell wall chemical and physical properties</label>
+    <label><input type="radio" name="Q11" value="D">D) Motility</label>
+  </div>
+  <div class="question" data-qnum="12">
+    <strong>12.</strong> Gram-positive bacteria stain:
+    <label><input type="radio" name="Q12" value="A" required="">A) Red/pink</label>
+    <label><input type="radio" name="Q12" value="B">B) Purple</label>
+    <label><input type="radio" name="Q12" value="C">C) Blue</label>
+    <label><input type="radio" name="Q12" value="D">D) Yellow</label>
+  </div>
+  <div class="question" data-qnum="13">
+    <strong>13.</strong> Gram-negative bacteria stain:
+    <label><input type="radio" name="Q13" value="A" required="">A) Purple</label>
+    <label><input type="radio" name="Q13" value="B">B) Blue</label>
+    <label><input type="radio" name="Q13" value="C">C) Pink/red</label>
+    <label><input type="radio" name="Q13" value="D">D) Green</label>
+  </div>
+  <div class="question" data-qnum="14">
+    <strong>14.</strong> A characteristic of Gram-positive bacteria is:
+    <label><input type="radio" name="Q14" value="A" required="">A) Thin peptidoglycan layer</label>
+    <label><input type="radio" name="Q14" value="B">B) Thick peptidoglycan layer</label>
+    <label><input type="radio" name="Q14" value="C">C) Outer membrane presence</label>
+    <label><input type="radio" name="Q14" value="D">D) Presence of endotoxin (LPS)</label>
+  </div>
+  <div class="question" data-qnum="15">
+    <strong>15.</strong> Which bacteria have an outer membrane containing lipopolysaccharides?
+    <label><input type="radio" name="Q15" value="A" required="">A) Gram-positive</label>
+    <label><input type="radio" name="Q15" value="B">B) Gram-negative</label>
+    <label><input type="radio" name="Q15" value="C">C) Both</label>
+    <label><input type="radio" name="Q15" value="D">D) Neither</label>
+  </div>
+  <div class="question" data-qnum="16">
+    <strong>16.</strong> Endotoxin is found in:
+    <label><input type="radio" name="Q16" value="A" required="">A) Gram-positive bacteria only</label>
+    <label><input type="radio" name="Q16" value="B">B) Gram-negative bacteria only</label>
+    <label><input type="radio" name="Q16" value="C">C) All bacteria</label>
+    <label><input type="radio" name="Q16" value="D">D) Viruses</label>
+  </div>
+  <div class="question" data-qnum="17">
+    <strong>17.</strong> Endotoxins are part of:
+    <label><input type="radio" name="Q17" value="A" required="">A) Peptidoglycan</label>
+    <label><input type="radio" name="Q17" value="B">B) Lipopolysaccharide (LPS)</label>
+    <label><input type="radio" name="Q17" value="C">C) Ribosomes</label>
+    <label><input type="radio" name="Q17" value="D">D) Capsule</label>
+  </div>
+  <div class="question" data-qnum="18">
+    <strong>18.</strong> When Gram-negative bacteria die, they release:
+    <label><input type="radio" name="Q18" value="A" required="">A) Exotoxins</label>
+    <label><input type="radio" name="Q18" value="B">B) Endotoxins</label>
+    <label><input type="radio" name="Q18" value="C">C) Antibiotics</label>
+    <label><input type="radio" name="Q18" value="D">D) Spores</label>
+  </div>
+  <div class="question" data-qnum="19">
+    <strong>19.</strong> Which of the following is NOT a symptom caused by endotoxin?
+    <label><input type="radio" name="Q19" value="A" required="">A) Fever</label>
+    <label><input type="radio" name="Q19" value="B">B) Hypotension</label>
+    <label><input type="radio" name="Q19" value="C">C) Septic shock</label>
+    <label><input type="radio" name="Q19" value="D">D) Allergy</label>
+  </div>
+  <div class="question" data-qnum="20">
+    <strong>20.</strong> Escherichia coli is an example of:
+    <label><input type="radio" name="Q20" value="A" required="">A) Gram-positive bacteria</label>
+    <label><input type="radio" name="Q20" value="B">B) Gram-negative bacteria</label>
+    <label><input type="radio" name="Q20" value="C">C) Virus</label>
+    <label><input type="radio" name="Q20" value="D">D) Fungi</label>
+  </div>
+
+  <!-- Questions 21 to 40 from Unit 2 MCQs (Chain of Infection) -->
+  <div class="question" data-qnum="21">
+    <strong>21.</strong> Which of the following is a pathogen?
+    <label><input type="radio" name="Q21" value="A" required="">A) Soil</label>
+    <label><input type="radio" name="Q21" value="B">B) Influenza virus</label>
+    <label><input type="radio" name="Q21" value="C">C) Water</label>
+    <label><input type="radio" name="Q21" value="D">D) Handkerchief</label>
+  </div>
+  <div class="question" data-qnum="22">
+    <strong>22.</strong> The habitat where an infectious agent normally lives and multiplies is called:
+    <label><input type="radio" name="Q22" value="A" required="">A) Carrier</label>
+    <label><input type="radio" name="Q22" value="B">B) Reservoir</label>
+    <label><input type="radio" name="Q22" value="C">C) Vector</label>
+    <label><input type="radio" name="Q22" value="D">D) Portal of exit</label>
+  </div>
+  <div class="question" data-qnum="23">
+    <strong>23.</strong> Which of the following is NOT considered a reservoir?
+    <label><input type="radio" name="Q23" value="A" required="">A) Humans</label>
+    <label><input type="radio" name="Q23" value="B">B) Animals</label>
+    <label><input type="radio" name="Q23" value="C">C) Environment</label>
+    <label><input type="radio" name="Q23" value="D">D) Antibiotics</label>
+  </div>
+  <div class="question" data-qnum="24">
+    <strong>24.</strong> The reservoir of Clostridium botulinum is:
+    <label><input type="radio" name="Q24" value="A" required="">A) Water</label>
+    <label><input type="radio" name="Q24" value="B">B) Soil</label>
+    <label><input type="radio" name="Q24" value="C">C) Humans</label>
+    <label><input type="radio" name="Q24" value="D">D) Animals</label>
+  </div>
+  <div class="question" data-qnum="25">
+    <strong>25.</strong> Diseases transmitted directly from person to person without intermediaries are examples of transmission from:
+    <label><input type="radio" name="Q25" value="A" required="">A) Animal reservoirs</label>
+    <label><input type="radio" name="Q25" value="B">B) Human reservoirs</label>
+    <label><input type="radio" name="Q25" value="C">C) Environmental reservoirs</label>
+    <label><input type="radio" name="Q25" value="D">D) Vector-borne transmission</label>
+  </div>
+  <div class="question" data-qnum="26">
+    <strong>26.</strong> A person who carries a pathogen but shows no symptoms is called:
+    <label><input type="radio" name="Q26" value="A" required="">A) Symptomatic carrier</label>
+    <label><input type="radio" name="Q26" value="B">B) Asymptomatic carrier</label>
+    <label><input type="radio" name="Q26" value="C">C) Immune host</label>
+    <label><input type="radio" name="Q26" value="D">D) Passive host</label>
+  </div>
+  <div class="question" data-qnum="27">
+    <strong>27.</strong> The term for diseases transmitted from vertebrate animals to humans is:
+    <label><input type="radio" name="Q27" value="A" required="">A) Nosocomial infections</label>
+    <label><input type="radio" name="Q27" value="B">B) Zoonoses</label>
+    <label><input type="radio" name="Q27" value="C">C) Endemic diseases</label>
+    <label><input type="radio" name="Q27" value="D">D) Vector-borne diseases</label>
+  </div>
+  <div class="question" data-qnum="28">
+    <strong>28.</strong> The portal of exit for influenza virus is typically the:
+    <label><input type="radio" name="Q28" value="A" required="">A) Skin</label>
+    <label><input type="radio" name="Q28" value="B">B) Respiratory tract</label>
+    <label><input type="radio" name="Q28" value="C">C) Urine</label>
+    <label><input type="radio" name="Q28" value="D">D) Blood</label>
+  </div>
+  <div class="question" data-qnum="29">
+    <strong>29.</strong> Which of the following is a direct mode of transmission?
+    <label><input type="radio" name="Q29" value="A" required="">A) Airborne</label>
+    <label><input type="radio" name="Q29" value="B">B) Droplet spread</label>
+    <label><input type="radio" name="Q29" value="C">C) Vector-borne</label>
+    <label><input type="radio" name="Q29" value="D">D) Vehicle-borne</label>
+  </div>
+  <div class="question" data-qnum="30">
+    <strong>30.</strong> Droplet nuclei are usually:
+    <label><input type="radio" name="Q30" value="A" required="">A) Larger than 10 microns</label>
+    <label><input type="radio" name="Q30" value="B">B) Smaller than 5 microns</label>
+    <label><input type="radio" name="Q30" value="C">C) Only found in water</label>
+    <label><input type="radio" name="Q30" value="D">D) Not airborne</label>
+  </div>
+  <div class="question" data-qnum="31">
+    <strong>31.</strong> The main way to prevent transmission at the portal of exit includes:
+    <label><input type="radio" name="Q31" value="A" required="">A) Immunization</label>
+    <label><input type="radio" name="Q31" value="B">B) Hand washing</label>
+    <label><input type="radio" name="Q31" value="C">C) Medical asepsis</label>
+    <label><input type="radio" name="Q31" value="D">D) Isolation of susceptible hosts</label>
+  </div>
+  <div class="question" data-qnum="32">
+    <strong>32.</strong> The fecal-oral route involves the portal of exit and entry through:
+    <label><input type="radio" name="Q32" value="A" required="">A) Respiratory tract and skin</label>
+    <label><input type="radio" name="Q32" value="B">B) Mouth and feces</label>
+    <label><input type="radio" name="Q32" value="C">C) Blood and urine</label>
+    <label><input type="radio" name="Q32" value="D">D) Skin and mucous membranes</label>
+  </div>
+  <div class="question" data-qnum="33">
+    <strong>33.</strong> Which of the following is NOT a mode of indirect transmission?
+    <label><input type="radio" name="Q33" value="A" required="">A) Airborne</label>
+    <label><input type="radio" name="Q33" value="B">B) Vehicle-borne</label>
+    <label><input type="radio" name="Q33" value="C">C) Direct contact</label>
+    <label><input type="radio" name="Q33" value="D">D) Vector-borne</label>
+  </div>
+  <div class="question" data-qnum="34">
+    <strong>34.</strong> Which is NOT an example of a vector?
+    <label><input type="radio" name="Q34" value="A" required="">A) Mosquito</label>
+    <label><input type="radio" name="Q34" value="B">B) Flea</label>
+    <label><input type="radio" name="Q34" value="C">C) Tick</label>
+    <label><input type="radio" name="Q34" value="D">D) Handkerchief</label>
+  </div>
+  <div class="question" data-qnum="35">
+    <strong>35.</strong> The disease eradicated by targeting humans as the only reservoir is:
+    <label><input type="radio" name="Q35" value="A" required="">A) Influenza</label>
+    <label><input type="radio" name="Q35" value="B">B) Smallpox</label>
+    <label><input type="radio" name="Q35" value="C">C) Rabies</label>
+    <label><input type="radio" name="Q35" value="D">D) Tuberculosis</label>
+  </div>
+  <div class="question" data-qnum="36">
+    <strong>36.</strong> Hookworm is transmitted primarily by:
+    <label><input type="radio" name="Q36" value="A" required="">A) Airborne transmission</label>
+    <label><input type="radio" name="Q36" value="B">B) Direct contact with contaminated soil</label>
+    <label><input type="radio" name="Q36" value="C">C) Vector-borne transmission</label>
+    <label><input type="radio" name="Q36" value="D">D) Droplet spread</label>
+  </div>
+  <div class="question" data-qnum="37">
+    <strong>37.</strong> Chronic carriers:
+    <label><input type="radio" name="Q37" value="A" required="">A) Always show symptoms</label>
+    <label><input type="radio" name="Q37" value="B">B) Harbors pathogens for months or years</label>
+    <label><input type="radio" name="Q37" value="C">C) Cannot transmit disease</label>
+    <label><input type="radio" name="Q37" value="D">D) Are immune hosts</label>
+  </div>
+  <div class="question" data-qnum="38">
+    <strong>38.</strong> The best method to prevent vector-borne transmission is:
+    <label><input type="radio" name="Q38" value="A" required="">A) Hand washing</label>
+    <label><input type="radio" name="Q38" value="B">B) Insect control</label>
+    <label><input type="radio" name="Q38" value="C">C) Isolation</label>
+    <label><input type="radio" name="Q38" value="D">D) Medical asepsis</label>
+  </div>
+  <div class="question" data-qnum="39">
+    <strong>39.</strong> The portal of entry must provide access to:
+    <label><input type="radio" name="Q39" value="A" required="">A) Blood only</label>
+    <label><input type="radio" name="Q39" value="B">B) Tissues where the pathogen multiplies or toxin acts</label>
+    <label><input type="radio" name="Q39" value="C">C) Only mucous membranes</label>
+    <label><input type="radio" name="Q39" value="D">D) The environment</label>
+  </div>
+  <div class="question" data-qnum="40">
+    <strong>40.</strong> Human immunodeficiency virus (HIV) typically enters the body through:
+    <label><input type="radio" name="Q40" value="A" required="">A) Respiratory tract</label>
+    <label><input type="radio" name="Q40" value="B">B) Blood and mucous membranes</label>
+    <label><input type="radio" name="Q40" value="C">C) Skin intact</label>
+    <label><input type="radio" name="Q40" value="D">D) Urine</label>
+  </div>
+
+  <!-- Questions 41 to 60 from Unit 3 MCQs (Innate & Acquired Immunity) -->
+  <div class="question" data-qnum="41">
+    <strong>41.</strong> What is the primary function of immunity?
+    <label><input type="radio" name="Q41" value="A" required="">A) To promote growth</label>
+    <label><input type="radio" name="Q41" value="B">B) To resist or eliminate harmful foreign materials and abnormal cells</label>
+    <label><input type="radio" name="Q41" value="C">C) To increase body temperature</label>
+    <label><input type="radio" name="Q41" value="D">D) To digest food</label>
+  </div>
+  <div class="question" data-qnum="42">
+    <strong>42.</strong> Innate immunity is:
+    <label><input type="radio" name="Q42" value="A" required="">A) Developed after vaccination</label>
+    <label><input type="radio" name="Q42" value="B">B) Present naturally without prior sensitization</label>
+    <label><input type="radio" name="Q42" value="C">C) Specific to one pathogen</label>
+    <label><input type="radio" name="Q42" value="D">D) Delayed response</label>
+  </div>
+  <div class="question" data-qnum="43">
+    <strong>43.</strong> Acquired immunity is characterized by:
+    <label><input type="radio" name="Q43" value="A" required="">A) Immediate response</label>
+    <label><input type="radio" name="Q43" value="B">B) Lack of memory</label>
+    <label><input type="radio" name="Q43" value="C">C) Specificity and immunological memory</label>
+    <label><input type="radio" name="Q43" value="D">D) Non-specific defense</label>
+  </div>
+  <div class="question" data-qnum="44">
+    <strong>44.</strong> Which system is a functional system, not an organ system?
+    <label><input type="radio" name="Q44" value="A" required="">A) Nervous system</label>
+    <label><input type="radio" name="Q44" value="B">B) Immune system</label>
+    <label><input type="radio" name="Q44" value="C">C) Circulatory system</label>
+    <label><input type="radio" name="Q44" value="D">D) Respiratory system</label>
+  </div>
+  <div class="question" data-qnum="45">
+    <strong>45.</strong> The first line of defense in immunity is:
+    <label><input type="radio" name="Q45" value="A" required="">A) Adaptive immunity</label>
+    <label><input type="radio" name="Q45" value="B">B) Innate immunity</label>
+    <label><input type="radio" name="Q45" value="C">C) Humoral immunity</label>
+    <label><input type="radio" name="Q45" value="D">D) Cell-mediated immunity</label>
+  </div>
+  <div class="question" data-qnum="46">
+    <strong>46.</strong> Innate immunity response time is approximately:
+    <label><input type="radio" name="Q46" value="A" required="">A) Days</label>
+    <label><input type="radio" name="Q46" value="B">B) Weeks</label>
+    <label><input type="radio" name="Q46" value="C">C) 0-4 hours</label>
+    <label><input type="radio" name="Q46" value="D">D) 1 month</label>
+  </div>
+  <div class="question" data-qnum="47">
+    <strong>47.</strong> Innate immunity is generally:
+    <label><input type="radio" name="Q47" value="A" required="">A) Specific</label>
+    <label><input type="radio" name="Q47" value="B">B) Non-specific</label>
+    <label><input type="radio" name="Q47" value="C">C) Adaptive</label>
+    <label><input type="radio" name="Q47" value="D">D) Slow</label>
+  </div>
+  <div class="question" data-qnum="48">
+    <strong>48.</strong> Which of the following is NOT a characteristic of innate immunity?
+    <label><input type="radio" name="Q48" value="A" required="">A) Immediate response</label>
+    <label><input type="radio" name="Q48" value="B">B) Memory formation</label>
+    <label><input type="radio" name="Q48" value="C">C) Present at birth</label>
+    <label><input type="radio" name="Q48" value="D">D) Non-specific</label>
+  </div>
+  <div class="question" data-qnum="49">
+    <strong>49.</strong> Physical barriers of innate immunity include:
+    <label><input type="radio" name="Q49" value="A" required="">A) Skin and mucous membranes</label>
+    <label><input type="radio" name="Q49" value="B">B) Antibodies</label>
+    <label><input type="radio" name="Q49" value="C">C) T cells</label>
+    <label><input type="radio" name="Q49" value="D">D) Memory cells</label>
+  </div>
+  <div class="question" data-qnum="50">
+    <strong>50.</strong> Which mechanical barrier helps trap pathogens in the respiratory tract?
+    <label><input type="radio" name="Q50" value="A" required="">A) Hair</label>
+    <label><input type="radio" name="Q50" value="B">B) Cilia</label>
+    <label><input type="radio" name="Q50" value="C">C) Sweat glands</label>
+    <label><input type="radio" name="Q50" value="D">D) Saliva</label>
+  </div>
+  <div class="question" data-qnum="51">
+    <strong>51.</strong> Chemical barriers in innate immunity include:
+    <label><input type="radio" name="Q51" value="A" required="">A) Enzymes and acid</label>
+    <label><input type="radio" name="Q51" value="B">B) Blood cells</label>
+    <label><input type="radio" name="Q51" value="C">C) T cells</label>
+    <label><input type="radio" name="Q51" value="D">D) B cells</label>
+  </div>
+  <div class="question" data-qnum="52">
+    <strong>52.</strong> Which fluid helps wash away pathogens from urinary organs?
+    <label><input type="radio" name="Q52" value="A" required="">A) Tears</label>
+    <label><input type="radio" name="Q52" value="B">B) Sweat</label>
+    <label><input type="radio" name="Q52" value="C">C) Urine</label>
+    <label><input type="radio" name="Q52" value="D">D) Blood</label>
+  </div>
+  <div class="question" data-qnum="53">
+    <strong>53.</strong> Normal flora competes with pathogens by:
+    <label><input type="radio" name="Q53" value="A" required="">A) Producing antibodies</label>
+    <label><input type="radio" name="Q53" value="B">B) Consuming nutrients and space</label>
+    <label><input type="radio" name="Q53" value="C">C) Killing host cells</label>
+    <label><input type="radio" name="Q53" value="D">D) Producing toxins</label>
+  </div>
+  <div class="question" data-qnum="54">
+    <strong>54.</strong> The skin acts as a:
+    <label><input type="radio" name="Q54" value="A" required="">A) Chemical barrier only</label>
+    <label><input type="radio" name="Q54" value="B">B) Mechanical barrier only</label>
+    <label><input type="radio" name="Q54" value="C">C) Both mechanical and chemical barrier</label>
+    <label><input type="radio" name="Q54" value="D">D) No barrier</label>
+  </div>
+  <div class="question" data-qnum="55">
+    <strong>55.</strong> Which of the following is part of the normal flora?
+    <label><input type="radio" name="Q55" value="A" required="">A) Pathogenic bacteria</label>
+    <label><input type="radio" name="Q55" value="B">B) Commensal bacteria</label>
+    <label><input type="radio" name="Q55" value="C">C) Viruses</label>
+    <label><input type="radio" name="Q55" value="D">D) Parasites</label>
+  </div>
+  <div class="question" data-qnum="56">
+    <strong>56.</strong> Neutrophils are:
+    <label><input type="radio" name="Q56" value="A" required="">A) Red blood cells</label>
+    <label><input type="radio" name="Q56" value="B">B) Most abundant white blood cells and phagocytes</label>
+    <label><input type="radio" name="Q56" value="C">C) Antibody producers</label>
+    <label><input type="radio" name="Q56" value="D">D) Memory cells</label>
+  </div>
+  <div class="question" data-qnum="57">
+    <strong>57.</strong> Macrophages primarily:
+    <label><input type="radio" name="Q57" value="A" required="">A) Attack pathogens in blood</label>
+    <label><input type="radio" name="Q57" value="B">B) Phagocytize microbes in tissues</label>
+    <label><input type="radio" name="Q57" value="C">C) Produce antibodies</label>
+    <label><input type="radio" name="Q57" value="D">D) Activate B cells</label>
+  </div>
+  <div class="question" data-qnum="58">
+    <strong>58.</strong> Cytokines are:
+    <label><input type="radio" name="Q58" value="A" required="">A) Large molecules that digest bacteria</label>
+    <label><input type="radio" name="Q58" value="B">B) Small proteins secreted by immune cells that regulate immune responses</label>
+    <label><input type="radio" name="Q58" value="C">C) Immune cells</label>
+    <label><input type="radio" name="Q58" value="D">D) Bacterial toxins</label>
+  </div>
+  <div class="question" data-qnum="59">
+    <strong>59.</strong> Which response is the first reaction to infection or injury?
+    <label><input type="radio" name="Q59" value="A" required="">A) Antibody production</label>
+    <label><input type="radio" name="Q59" value="B">B) Inflammatory response</label>
+    <label><input type="radio" name="Q59" value="C">C) Memory cell activation</label>
+    <label><input type="radio" name="Q59" value="D">D) Complement activation</label>
+  </div>
+  <div class="question" data-qnum="60">
+    <strong>60.</strong> Natural killer (NK) cells:
+    <label><input type="radio" name="Q60" value="A" required="">A) Produce antibodies</label>
+    <label><input type="radio" name="Q60" value="B">B) Kill virus-infected and cancer cells</label>
+    <label><input type="radio" name="Q60" value="C">C) Activates B cells</label>
+    <label><input type="radio" name="Q60" value="D">D) Digest food</label>
+  </div>
+
+  <!-- Questions 61 to 80 from Unit 3 MCQs continued -->
+  <div class="question" data-qnum="61">
+    <strong>61.</strong> The complement system is:
+    <label><input type="radio" name="Q61" value="A" required="">A) A group of plasma proteins that enhance phagocytosis and lyse pathogens</label>
+    <label><input type="radio" name="Q61" value="B">B) Antibody molecules</label>
+    <label><input type="radio" name="Q61" value="C">C) Phagocytic cells</label>
+    <label><input type="radio" name="Q61" value="D">D) T cells</label>
+  </div>
+  <div class="question" data-qnum="62">
+    <strong>62.</strong> Complement proteins are numbered from:
+    <label><input type="radio" name="Q62" value="A" required="">A) C1 to C5</label>
+    <label><input type="radio" name="Q62" value="B">B) C1 to C9</label>
+    <label><input type="radio" name="Q62" value="C">C) C10 to C20</label>
+    <label><input type="radio" name="Q62" value="D">D) C100 to C200</label>
+  </div>
+  <div class="question" data-qnum="63">
+    <strong>63.</strong> Complement system functions include:
+    <label><input type="radio" name="Q63" value="A" required="">A) Direct killing of pathogens</label>
+    <label><input type="radio" name="Q63" value="B">B) Coating pathogens to enhance phagocytosis</label>
+    <label><input type="radio" name="Q63" value="C">C) Activating inflammatory cells</label>
+    <label><input type="radio" name="Q63" value="D">D) All of the above</label>
+  </div>
+  <div class="question" data-qnum="64">
+    <strong>64.</strong> Acquired immunity develops:
+    <label><input type="radio" name="Q64" value="A" required="">A) At birth</label>
+    <label><input type="radio" name="Q64" value="B">B) After exposure to specific pathogens</label>
+    <label><input type="radio" name="Q64" value="C">C) Without antigen exposure</label>
+    <label><input type="radio" name="Q64" value="D">D) Only in the elderly</label>
+  </div>
+  <div class="question" data-qnum="65">
+    <strong>65.</strong> Acquired immunity is known for:
+    <label><input type="radio" name="Q65" value="A" required="">A) Non-specific response</label>
+    <label><input type="radio" name="Q65" value="B">B) Immunological memory</label>
+    <label><input type="radio" name="Q65" value="C">C) Immediate response</label>
+    <label><input type="radio" name="Q65" value="D">D) No memory</label>
+  </div>
+  <div class="question" data-qnum="66">
+    <strong>66.</strong> The main cells involved in humoral immunity are:
+    <label><input type="radio" name="Q66" value="A" required="">A) T lymphocytes</label>
+    <label><input type="radio" name="Q66" value="B">B) B lymphocytes</label>
+    <label><input type="radio" name="Q66" value="C">C) Macrophages</label>
+    <label><input type="radio" name="Q66" value="D">D) Neutrophils</label>
+  </div>
+  <div class="question" data-qnum="67">
+    <strong>67.</strong> Cell-mediated immunity is primarily carried out by:
+    <label><input type="radio" name="Q67" value="A" required="">A) B cells</label>
+    <label><input type="radio" name="Q67" value="B">B) Neutrophils</label>
+    <label><input type="radio" name="Q67" value="C">C) T lymphocytes</label>
+    <label><input type="radio" name="Q67" value="D">D) Macrophages</label>
+  </div>
+  <div class="question" data-qnum="68">
+    <strong>68.</strong> The response time for acquired immunity is:
+    <label><input type="radio" name="Q68" value="A" required="">A) Immediate (minutes)</label>
+    <label><input type="radio" name="Q68" value="B">B) 0-4 hours</label>
+    <label><input type="radio" name="Q68" value="C">C) Delayed (days)</label>
+    <label><input type="radio" name="Q68" value="D">D) Hours</label>
+  </div>
+  <div class="question" data-qnum="69">
+    <strong>69.</strong> Antibodies are also called:
+    <label><input type="radio" name="Q69" value="A" required="">A) Cytokines</label>
+    <label><input type="radio" name="Q69" value="B">B) Immunoglobulins</label>
+    <label><input type="radio" name="Q69" value="C">C) Complement proteins</label>
+    <label><input type="radio" name="Q69" value="D">D) Phagocytes</label>
+  </div>
+  <div class="question" data-qnum="70">
+    <strong>70.</strong> Antibodies function by:
+    <label><input type="radio" name="Q70" value="A" required="">A) Binding and neutralizing antigens</label>
+    <label><input type="radio" name="Q70" value="B">B) Attacking host cells</label>
+    <label><input type="radio" name="Q70" value="C">C) Producing cytokines</label>
+    <label><input type="radio" name="Q70" value="D">D) Killing cancer cells</label>
+  </div>
+  <div class="question" data-qnum="71">
+    <strong>71.</strong> In cell-mediated immunity, antibodies:
+    <label><input type="radio" name="Q71" value="A" required="">A) Play a major role</label>
+    <label><input type="radio" name="Q71" value="B">B) Are not involved</label>
+    <label><input type="radio" name="Q71" value="C">C) Are produced by macrophages</label>
+    <label><input type="radio" name="Q71" value="D">D) Are the main defense</label>
+  </div>
+  <div class="question" data-qnum="72">
+    <strong>72.</strong> Cytotoxic T lymphocytes:
+    <label><input type="radio" name="Q72" value="A" required="">A) Produce antibodies</label>
+    <label><input type="radio" name="Q72" value="B">B) Destroy infected cells</label>
+    <label><input type="radio" name="Q72" value="C">C) Activate B cells</label>
+    <label><input type="radio" name="Q72" value="D">D) Produce complement proteins</label>
+  </div>
+  <div class="question" data-qnum="73">
+    <strong>73.</strong> Vaccination works by:
+    <label><input type="radio" name="Q73" value="A" required="">A) Activating innate immunity only</label>
+    <label><input type="radio" name="Q73" value="B">B) Creating immunological memory via adaptive immunity</label>
+    <label><input type="radio" name="Q73" value="C">C) Killing all pathogens directly</label>
+    <label><input type="radio" name="Q73" value="D">D) Producing complement proteins</label>
+  </div>
+  <div class="question" data-qnum="74">
+    <strong>74.</strong> Which type of immunity is considered the "first line of defense"?
+    <label><input type="radio" name="Q74" value="A" required="">A) Acquired immunity</label>
+    <label><input type="radio" name="Q74" value="B">B) Innate immunity</label>
+    <label><input type="radio" name="Q74" value="C">C) Humoral immunity</label>
+    <label><input type="radio" name="Q74" value="D">D) Cell-mediated immunity</label>
+  </div>
+  <div class="question" data-qnum="75">
+    <strong>75.</strong> Which immunity has memory and specificity?
+    <label><input type="radio" name="Q75" value="A" required="">A) Innate immunity</label>
+    <label><input type="radio" name="Q75" value="B">B) Acquired immunity</label>
+    <label><input type="radio" name="Q75" value="C">C) Mechanical barriers</label>
+    <label><input type="radio" name="Q75" value="D">D) Chemical barriers</label>
+  </div>
+  <div class="question" data-qnum="76">
+    <strong>76.</strong> Which of the following cells is NOT part of innate immunity?
+    <label><input type="radio" name="Q76" value="A" required="">A) Neutrophils</label>
+    <label><input type="radio" name="Q76" value="B">B) Macrophages</label>
+    <label><input type="radio" name="Q76" value="C">C) B lymphocytes</label>
+    <label><input type="radio" name="Q76" value="D">D) Natural killer cells</label>
+  </div>
+  <div class="question" data-qnum="77">
+    <strong>77.</strong> The adaptive immune system is composed of:
+    <label><input type="radio" name="Q77" value="A" required="">A) Physical and chemical barriers</label>
+    <label><input type="radio" name="Q77" value="B">B) B cells and T cells</label>
+    <label><input type="radio" name="Q77" value="C">C) Neutrophils and macrophages</label>
+    <label><input type="radio" name="Q77" value="D">D) Complement proteins only</label>
+  </div>
+  <div class="question" data-qnum="78">
+    <strong>78.</strong> Which immune response is faster upon second exposure to the same pathogen?
+    <label><input type="radio" name="Q78" value="A" required="">A) Innate immunity</label>
+    <label><input type="radio" name="Q78" value="B">B) Adaptive immunity</label>
+    <label><input type="radio" name="Q78" value="C">C) Mechanical barrier</label>
+    <label><input type="radio" name="Q78" value="D">D) Chemical barrier</label>
+  </div>
+  <div class="question" data-qnum="79">
+    <strong>79.</strong> What triggers the inflammatory response?
+    <label><input type="radio" name="Q79" value="A" required="">A) Bacterial toxins only</label>
+    <label><input type="radio" name="Q79" value="B">B) Chemical signals released by injured cells</label>
+    <label><input type="radio" name="Q79" value="C">C) Antibody production</label>
+    <label><input type="radio" name="Q79" value="D">D) Complement activation only</label>
+  </div>
+  <div class="question" data-qnum="80">
+    <strong>80.</strong> What is the role of phagocytosis in innate immunity?
+    <label><input type="radio" name="Q80" value="A" required="">A) Producing antibodies</label>
+    <label><input type="radio" name="Q80" value="B">B) Engulfing and destroying pathogens</label>
+    <label><input type="radio" name="Q80" value="C">C) Inhibiting complement proteins</label>
+    <label><input type="radio" name="Q80" value="D">D) Activating T cells</label>
+  </div>
+
+  <h2>Fill in the Blanks (81-85)</h2>
+  <div class="question" data-qnum="81">
+    <strong>81.</strong> Immunity is the body’s ability to resist or eliminate __________ foreign materials or abnormal cells.
+    <input type="text" name="Q81" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="82">
+    <strong>82.</strong> Innate immunity is __________ present and is not due to prior sensitization to an antigen.
+    <input type="text" name="Q82" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="83">
+    <strong>83.</strong> The first line of defense in the immune system is called __________ immunity.
+    <input type="text" name="Q83" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="84">
+    <strong>84.</strong> The movement of hair-like structures in the bronchi that helps clear pathogens is called __________.
+    <input type="text" name="Q84" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="85">
+    <strong>85.</strong> __________ barriers include acids, enzymes, and mucus that prevent pathogens from gaining a foothold.
+    <input type="text" name="Q85" required="" placeholder="Your answer here">
+  </div>
+
+  <h2>True or False (86-90)</h2>
+  <div class="question" data-qnum="86">
+    <strong>86.</strong> Innate immunity is the body's first line of defense and is present in all individuals at all times.
+    <label><input type="radio" name="Q86" value="True" required="">True</label>
+    <label><input type="radio" name="Q86" value="False">False</label>
+  </div>
+  <div class="question" data-qnum="87">
+    <strong>87.</strong> The innate immune response typically begins immediately and lasts for 0-4 hours after infection.
+    <label><input type="radio" name="Q87" value="True" required="">True</label>
+    <label><input type="radio" name="Q87" value="False">False</label>
+  </div>
+  <div class="question" data-qnum="88">
+    <strong>88.</strong> Natural killer cells are part of acquired immunity and help kill virus-infected cells.
+    <label><input type="radio" name="Q88" value="True" required="">True</label>
+    <label><input type="radio" name="Q88" value="False">False</label>
+  </div>
+  <div class="question" data-qnum="89">
+    <strong>89.</strong> Acquired immunity has memory, allowing a faster response upon re-exposure to the same pathogen.
+    <label><input type="radio" name="Q89" value="True" required="">True</label>
+    <label><input type="radio" name="Q89" value="False">False</label>
+  </div>
+  <div class="question" data-qnum="90">
+    <strong>90.</strong> The immune system is an organ system made up of individual organs such as the skin and mucous membranes.
+    <label><input type="radio" name="Q90" value="True" required="">True</label>
+    <label><input type="radio" name="Q90" value="False">False</label>
+  </div>
+
+  <h2>Identify Items (91-95)</h2>
+  <div class="question" data-qnum="91">
+    <strong>91.</strong> Identify the term for living organisms too small to be seen with the naked eye.
+    <input type="text" name="Q91" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="92">
+    <strong>92.</strong> Identify the branch of microbiology that studies bacteria.
+    <input type="text" name="Q92" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="93">
+    <strong>93.</strong> Identify the process by which bacteria reproduce.
+    <input type="text" name="Q93" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="94">
+    <strong>94.</strong> Identify the shape of rod-shaped bacteria.
+    <input type="text" name="Q94" required="" placeholder="Your answer here">
+  </div>
+  <div class="question" data-qnum="95">
+    <strong>95.</strong> Identify the shape of spherical bacteria.
+    <input type="text" name="Q95" required="" placeholder="Your answer here">
+  </div>
+
+  <h2>Match-Type Questions (96-100)</h2>
+  <p><strong>Match the following in Column B to Column A:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Column A</th>
+        <th>Match Column B (Select one for each)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Infectious agent</td>
+        <td>
+          <select name="Q96" required="">
+            <option value="">Select</option>
+            <option value="A">A. Habitat where the pathogen grows</option>
+            <option value="B">B. Causes disease or illness</option>
+            <option value="C">C. Path by which pathogen leaves host</option>
+            <option value="D">D. Pathway through which pathogen enters host</option>
+            <option value="E">E. Person at risk due to weak immunity</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>2. Reservoir</td>
+        <td>
+          <select name="Q97" required="">
+            <option value="">Select</option>
+            <option value="A">A. Habitat where the pathogen grows</option>
+            <option value="B">B. Causes disease or illness</option>
+            <option value="C">C. Path by which pathogen leaves host</option>
+            <option value="D">D. Pathway through which pathogen enters host</option>
+            <option value="E">E. Person at risk due to weak immunity</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>3. Portal of exit</td>
+        <td>
+          <select name="Q98" required="">
+            <option value="">Select</option>
+            <option value="A">A. Habitat where the pathogen grows</option>
+            <option value="B">B. Causes disease or illness</option>
+            <option value="C">C. Path by which pathogen leaves host</option>
+            <option value="D">D. Pathway through which pathogen enters host</option>
+            <option value="E">E. Person at risk due to weak immunity</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>4. Portal of entry</td>
+        <td>
+          <select name="Q99" required="">
+            <option value="">Select</option>
+            <option value="A">A. Habitat where the pathogen grows</option>
+            <option value="B">B. Causes disease or illness</option>
+            <option value="C">C. Path by which pathogen leaves host</option>
+            <option value="D">D. Pathway through which pathogen enters host</option>
+            <option value="E">E. Person at risk due to weak immunity</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>5. Susceptible host</td>
+        <td>
+          <select name="Q100" required="">
+            <option value="">Select</option>
+            <option value="A">A. Habitat where the pathogen grows</option>
+            <option value="B">B. Causes disease or illness</option>
+            <option value="C">C. Path by which pathogen leaves host</option>
+            <option value="D">D. Pathway through which pathogen enters host</option>
+            <option value="E">E. Person at risk due to weak immunity</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <label for="username"><strong>Your Full Name (required):</strong></label>
+    <input type="text" id="username" name="username" required="" placeholder="Type your full name here">
+  </div>
+
+  <button type="submit" class="btn-submit">Submit Test</button>
+</form>
+
+<div class="score" id="score"></div>
+</main>
+
+<script>
+  const correctAnswers = {
+    // Unit 1 MCQs (1-20)
+    Q1: 'B', Q2: 'C', Q3: 'C', Q4: 'D', Q5: 'B', Q6: 'C', Q7: 'B', Q8: 'C', Q9: 'C', Q10: 'B',
+    Q11: 'C', Q12: 'B', Q13: 'C', Q14: 'B', Q15: 'B', Q16: 'B', Q17: 'B', Q18: 'B', Q19: 'D', Q20: 'B',
+    // Unit 2 MCQs (21-40)
+    Q21: 'B', Q22: 'B', Q23: 'D', Q24: 'B', Q25: 'B', Q26: 'B', Q27: 'B', Q28: 'B', Q29: 'B', Q30: 'B',
+    Q31: 'C', Q32: 'B', Q33: 'C', Q34: 'D', Q35: 'B', Q36: 'B', Q37: 'B', Q38: 'B', Q39: 'B', Q40: 'B',
+    // Unit 3 MCQs (41-80)
+    Q41: 'B', Q42: 'B', Q43: 'C', Q44: 'B', Q45: 'B', Q46: 'C', Q47: 'B', Q48: 'B', Q49: 'A', Q50: 'B',
+    Q51: 'A', Q52: 'C', Q53: 'B', Q54: 'C', Q55: 'B', Q56: 'B', Q57: 'B', Q58: 'B', Q59: 'B', Q60: 'B',
+    Q61: 'A', Q62: 'B', Q63: 'D', Q64: 'B', Q65: 'B', Q66: 'B', Q67: 'C', Q68: 'C', Q69: 'B', Q70: 'A',
+    Q71: 'B', Q72: 'B', Q73: 'B', Q74: 'B', Q75: 'B', Q76: 'C', Q77: 'B', Q78: 'B', Q79: 'B', Q80: 'B',
+    // Fill in the blanks (81-85) -- answers normalized lowercase for checking
+    Q81: 'potentially harmful', Q82: 'naturally', Q83: 'innate', Q84: 'cilia', Q85: 'chemical',
+    // True or False (86-90)
+    Q86: 'True', Q87: 'True', Q88: 'False', Q89: 'True', Q90: 'False',
+    // Identify Items (91-95) normalized lowercase
+    Q91: 'micro-organisms', Q92: 'bacteriology', Q93: 'binary fission', Q94: 'bacilli', Q95: 'cocci',
+    // Match-Type (96-100)
+    Q96: 'B', Q97: 'A', Q98: 'C', Q99: 'D', Q100: 'E'
+  };
+
+  // Normalize fill in the blank answers for checking
+  function normalizeAnswer(text) {
+    return text.trim().toLowerCase().replace(/[-_ ]+/g, ' ');
+  }
+
+  // Timer countdown
+  let timeLeft = 20 * 60; // 20 minutes in seconds
+  const timerEl = document.getElementById('timer');
+
+  function updateTimer() {
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      alert('Time is up! The test will now be submitted automatically.');
+      document.getElementById('testForm').requestSubmit();
+      return;
+    }
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerEl.textContent = `Time left: ${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    timeLeft--;
+  }
+  const timerInterval = setInterval(updateTimer, 1000);
+  updateTimer();
+
+  document.getElementById('testForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    clearInterval(timerInterval);
+
+    const form = e.target;
+    const formData = new FormData(form);
+    let totalScore = 0;
+    let maxScore = 100;
+    const feedbacks = [];
+
+    // Validate name
+    const username = formData.get('username').trim();
+    if (!username) {
+      alert('Please enter your full name before submitting.');
+      return;
+    }
+
+    // Check MCQs and T/F (radio inputs)
+    for (let i = 1; i <= 90; i++) {
+      const q = 'Q' + i;
+      const userAns = formData.get(q);
+      if (!userAns) {
+        feedbacks.push(`Question ${i}: No answer selected.`);
+        continue;
+      }
+      if (i <= 80 || (i >= 86 && i <= 90)) {
+        if (userAns === correctAnswers[q]) {
+          totalScore++;
+        } else {
+          feedbacks.push(`Question ${i}: Incorrect. Correct answer: <strong>${correctAnswers[q]}</strong>`);
+        }
+      }
+    }
+
+    // Check Fill in the blanks (81-85)
+    for (let i = 81; i <= 85; i++) {
+      const q = 'Q' + i;
+      const userAns = formData.get(q);
+      if (!userAns) {
+        feedbacks.push(`Question ${i}: No answer provided.`);
+        continue;
+      }
+      if (normalizeAnswer(userAns) === normalizeAnswer(correctAnswers[q])) {
+        totalScore++;
+      } else {
+        feedbacks.push(`Question ${i}: Incorrect. Correct answer: <strong>${correctAnswers[q]}</strong>`);
+      }
+    }
+
+    // Check Identify Items (91-95)
+    for (let i = 91; i <= 95; i++) {
+      const q = 'Q' + i;
+      const userAns = formData.get(q);
+      if (!userAns) {
+        feedbacks.push(`Question ${i}: No answer provided.`);
+        continue;
+      }
+      if (normalizeAnswer(userAns) === normalizeAnswer(correctAnswers[q])) {
+        totalScore++;
+      } else {
+        feedbacks.push(`Question ${i}: Incorrect. Correct answer: <strong>${correctAnswers[q]}</strong>`);
+      }
+    }
+
+    // Check Match-Type (96-100), must match exactly
+    for (let i = 96; i <= 100; i++) {
+      const q = 'Q' + i;
+      const userAns = formData.get(q);
+      if (!userAns) {
+        feedbacks.push(`Question ${i}: No selection made.`);
+        continue;
+      }
+      if (userAns === correctAnswers[q]) {
+        totalScore++;
+      } else {
+        feedbacks.push(`Question ${i}: Incorrect. Correct answer: <strong>${correctAnswers[q]}</strong>`);
+      }
+    }
+
+    // Show result and corrections
+    const scoreEl = document.getElementById('score');
+    scoreEl.innerHTML = `<p>Hello <strong>${username}</strong>, your score is <strong>${totalScore} / ${maxScore}</strong>.</p>`;
+
+    if (feedbacks.length > 0) {
+      const correctionHTML = feedbacks.map(fb => `<p class="correction">${fb}</p>`).join('');
+      scoreEl.innerHTML += `<h3>Corrections for wrong answers:</h3>${correctionHTML}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      scoreEl.innerHTML += `<p class="correct">Excellent! All answers are correct.</p>`;
+    }
+    // Disable form after submission
+    form.querySelectorAll('input, select, button').forEach(el => el.disabled = true);
+  });
+</script>
+
+
+</body></html>
